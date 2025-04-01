@@ -10,14 +10,16 @@
             <h5>Register Here</h5>
         </div>
         
-        <form>
-            <input type="text" class="form-control" placeholder="Full Name" required>
-            <input type="text" class="form-control my-2" placeholder="Contact Number" required>
-            <input type="text" class="form-control" placeholder="Referral Code">
-            <div class="d-grid">
-                <button class="btn btn-primary mt-2">Register</button>
-            </div>
-        </form>         
+        <div class="form-group">
+            <form #registrationForm="ngForm" (ngSubmit)="registerUser(registrationForm)" ngNativeValidate>
+                <input type="text" class="form-control" placeholder="Full Name" name="fullName" ngModel required>
+                <input type="text" class="form-control my-2" placeholder="Contact Number" name="phoneNo" ngModel required>
+                <input type="text" class="form-control" placeholder="Referral Code" name="referralCode" ngModel>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary mt-2">Register</button>
+                </div>
+            </form>
+        </div>       
         <hr>
         <div>
             <h5>Login Here</h5>

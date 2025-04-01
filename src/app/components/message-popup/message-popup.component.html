@@ -1,0 +1,19 @@
+@if(showPopup | async){
+<div>
+    <div tabindex="-1"  class="p-3 modal row d-flex align-items-center justify-content-center bg-background-transparent">
+            <div class="col-lg-4 col-sm-9 col-md-6">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>{{messageHead | async}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{messageBody | async}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" (click)="closePopupDialog()">close</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+} 
