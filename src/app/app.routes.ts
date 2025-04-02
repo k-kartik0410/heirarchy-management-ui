@@ -1,19 +1,21 @@
 import { Routes } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AuthGuard } from './services/auth.guard';
 
 export const routes: Routes = [
     {
         path: "home",
-        component: HomePageComponent
-    },
-    {
-        path: "signup",
-        component: SignupComponent
+        component: HomePageComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: "",
-        redirectTo: "/signup",
-        pathMatch: "full",
-    }
+        component: SignupComponent
+    },
+    // {
+    //     path: "",
+    //     redirectTo: "/signup",
+    //     pathMatch: "full",
+    // }
 ];

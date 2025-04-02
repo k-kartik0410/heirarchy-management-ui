@@ -1,1 +1,15 @@
-<p>home-page works!</p>
+<div class="mt-3">
+    <div class="ps-2">
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+    <div>
+        <p-organization-chart [value]="outputData" [collapsible]="true" selectionMode="single" styleClass="p-person">
+            <ng-template let-node pTemplate="person">
+                <div class="node-header">{{node.data.name}}</div>
+                <div class="node-content">
+                    <div>Code: {{node.data.referral}}</div>
+                </div>
+            </ng-template>
+        </p-organization-chart>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MessagePopupService } from '../message-popup/message-popup.service';
 import { LoadingSpinnerService } from '../loading-spinner/loading-spinner.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,6 +19,7 @@ export class SignupComponent {
   private userService = inject(UserServiceService);
   private messagePopUpService = inject(MessagePopupService);
   private loader = inject(LoadingSpinnerService);
+  private authService = inject(AuthService);
 
   constructor(private router: Router){}
 
@@ -33,10 +35,10 @@ export class SignupComponent {
     
     this.userService.registrUser(user).subscribe({
       next: (response) =>{
-        this.messagePopUpService.openPopUp("Success","Registration Success");
+        this.messagePopUpService.openPopUp("Registration","Registration Success");
       },
       error: (err) =>{
-        this.messagePopUpService.openPopUp("Failure","Something went wrong");
+        this.messagePopUpService.openPopUp("Registration Failed",err.error?.errorMessage);
         this.loader.closeLoader();
       },
       complete: () => {
@@ -50,10 +52,12 @@ export class SignupComponent {
     this.loader.openLoader();
     this.userService.loginuser(this.phoneNo).subscribe({
       next: (response) =>{
-        this.loader.closeLoader();
+        this.authService.login();
         this.router.navigateByUrl("/home", {state: response});
+        this.loader.closeLoader();
       },
       error: (err) =>{
+        this.messagePopUpService.openPopUp("Login Failed",err.error?.errorMessage);
         this.loader.closeLoader();
       },
       complete:() =>{

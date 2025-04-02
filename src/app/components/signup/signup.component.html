@@ -13,8 +13,9 @@
         <div class="form-group">
             <form #registrationForm="ngForm" (ngSubmit)="registerUser(registrationForm)" ngNativeValidate>
                 <input type="text" class="form-control" placeholder="Full Name" name="fullName" ngModel required>
-                <input type="text" class="form-control my-2" placeholder="Contact Number" name="phoneNo" ngModel required>
-                <input type="text" class="form-control" placeholder="Referral Code" name="referralCode" ngModel>
+                <input type="text"  pattern="[0-9]+" minlength="8" maxlength="12" 
+                    class="form-control my-2" placeholder="Contact Number" name="phoneNo" ngModel required>
+                <input type="text" minlength="8" maxlength="8" class="form-control" placeholder="Referral Code" name="referralCode" ngModel required>
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary mt-2">Register</button>
                 </div>

@@ -1,0 +1,20 @@
+:host ::ng-deep .p-organizationchart{
+    .p-person{
+        padding: 0;
+        border: 0 node;
+    }
+
+    .node-header, .node-content{
+        padding: .6em .9rem;
+    }
+
+    .node-header{
+        background-color: #0d6efd;
+        color: #ffffff;
+    }
+
+    .node-content{
+        background-color: #6c757d;
+        color:#ffffff;
+    }
+}
