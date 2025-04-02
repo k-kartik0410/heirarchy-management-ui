@@ -25,10 +25,10 @@
             <h5>Login Here</h5>
         </div>
 
-        <input type="text" class="form-control" placeholder="Enter Contact Number">
+        <input type="text" class="form-control" placeholder="Enter Contact Number" [(ngModel)]="phoneNo">
 
         <div class="d-grid">
-            <button class="btn btn-primary mt-2">Login</button>
+            <button class="btn btn-primary mt-2" (click)="login()">Login</button>
         </div>
     </div>
 </div>

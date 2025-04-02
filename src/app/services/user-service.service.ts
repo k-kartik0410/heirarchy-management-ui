@@ -16,4 +16,8 @@ export class UserServiceService {
     return this.httpClient.post(this.apiHostUrl+'/user/register', userData)
   }
 
+  loginuser(phoneNo:string): Observable<any>{
+    return this.httpClient.get(this.apiHostUrl+"/user/"+phoneNo);
+  }
+
 }

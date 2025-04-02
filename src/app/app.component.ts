@@ -6,7 +6,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SignupComponent, MessagePopupComponent, LoadingSpinnerComponent],
+  imports: [RouterOutlet, MessagePopupComponent, LoadingSpinnerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
