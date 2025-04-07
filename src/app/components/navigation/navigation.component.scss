@@ -1,0 +1,23 @@
+a:hover{
+    color: blue !important;
+}
+a.active{
+    color: blue !important;
+    text-decoration: solid underline Blue 4px;
+}
+
+a.footer-link{
+        color: white !important;
+        text-decoration: none;
+}
+
+a.footer-link:hover{
+    color: white !important;
+    text-decoration: underline;
+}
+
+a.footer-link-active{
+    color: white !important;
+    text-decoration: underline;
+    font-weight: bold;
+}

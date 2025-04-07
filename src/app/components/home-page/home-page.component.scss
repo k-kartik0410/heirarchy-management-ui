@@ -4,7 +4,7 @@
         border: 0 node;
     }
 
-    .node-header, .node-content{
+    .node-header, .node-content, .node-footer{
         padding: .6em .9rem;
     }
 
@@ -16,5 +16,10 @@
     .node-content{
         background-color: #6c757d;
         color:#ffffff;
+    }
+
+    .node-footer{
+        background-color: #28a745;
+        color:#ffffff
     }
 }

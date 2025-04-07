@@ -5,10 +5,24 @@
     <div>
         <p-organization-chart [value]="outputData" [collapsible]="true" selectionMode="single" styleClass="p-person">
             <ng-template let-node pTemplate="person">
-                <div class="node-header">{{node.data.name}}</div>
-                <div class="node-content">
-                    <div>Code: {{node.data.referral}}</div>
+                <div class="shadow">
+                    <div class="node-header">{{node.data.name}}</div>
+                    <div class="node-content">
+                        <div>Code: {{node.data.referral}}</div>
+                        <div>Phone: {{node.data.phoneNo}}</div>
+                    </div>
+                    @if(node.data.level != 0){
+                        <div class="node-footer">
+                            <div>
+                                Progress Level : {{node.data.level}}
+                            </div>
+                            <!-- <div>
+                                Level : {{node.data.level}}
+                            </div> -->
+                        </div>
+                    }
                 </div>
+                
             </ng-template>
         </p-organization-chart>
     </div>

@@ -1,0 +1,118 @@
+<div>
+    <nav class="navbar pb-0 navbar-expand-lg navbar-light shadow-sm" style="background-color: #ffffff;">
+        <div class="container justify-content-between gap-2">
+            <div class="pb-3">
+                <img src="login_icon.jpeg" alt="Logo" class="logo" width="80" height="80">
+            </div>
+    
+            <div class="d-flex flex-column align-self-end justify-content-end flex-fill">
+                <div class="d-flex align-items-center">
+                    <div class="me-5">
+                        <button class="btn btn-outline-primary">All Courses</button>
+                    </div>
+                    <div class="flex-grow-1 ms-5">
+                        <div class="input-group ps-5">
+                            <span class="input-group-text bg-transparent border-end-0" id="basic-addon1"><i
+                                    class="fa fa-search"></i></span>
+                            <input type="text" class="form-control bg-transparent border-start-0"
+                                placeholder="What do you want to learn" aria-describedby="basic-addon1" disabled>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light mx-3">
+                            <span class="text-primary"><i class="fa fa-shopping-cart"></i> PGA Store</span>
+                        </button>
+                        <button class="btn btn-light">
+                            <span class="text-primary"><i class="fa fa-phone"></i> 7033753589</span>
+                        </button>
+                        <button class="btn btn-light mx-3">
+                            <i class="fa fa-bell text-primary"></i>
+                        </button>
+                        <button class="btn btn-primary" type="submit" routerLink="/login">Login/Register</button>
+                    </div>
+                </div>
+                <ul class="navbar-nav align-self-end align-items-end mt-2 gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link pb-0" routerLink="/" routerLinkActive="active"  
+                        [routerLinkActiveOptions]="{exact:true}">Home</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link pb-0" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pb-0" href="#">Ask Doubts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pb-0" href="#">Study Materials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pb-0" routerLink="/about-us" routerLinkActive="active"  
+                        [routerLinkActiveOptions]="{exact:true}">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<ng-content></ng-content>
+<div class="container-fluid bg-dark text-light">
+    <div class="row py-5">
+        <div class="col-4 px-5">
+            <div class="ps-5">
+                <img src="login_icon.jpeg" alt="Logo" class="logo" width="100" height="100">
+                <div class="pt-3 pe-3 d-flex">
+                    <i class="fa fa-location-arrow mt-1 me-2"></i>
+                    <p>Parivartan Gyan Academy Pvt. Ltd. 2nd Floor, A13A 1 Jhajha, Bihar 811305</p>
+                </div>
+                <div class="pt-3 pe-3 d-flex">
+                        <i class="fa fa-envelope mt-1 me-2"></i>
+                        <p>{{email}}</p>
+                </div>
+                <div class="pt-3 pe-3 d-flex">
+                    Copyright 2025 PGA
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div><b>Company</b></div>
+            <div class="my-2">
+                <a class="footer-link" routerLink="/about-us" routerLinkActive="footer-link-active"  
+                [routerLinkActiveOptions]="{exact:true}">
+                    About Us
+                </a>
+            </div>
+            <div>Contact Us</div>
+            <div class="my-2">Career</div>
+            <div>PGA Blog</div>
+            <div class="my-2">Galary</div>
+            <div>FAQs</div>
+        </div>
+        <div class="col-2">
+            <div><b>Popular Exams</b></div>
+            <div class="my-2">Defence Exams</div>
+            <div>NEET | JEE | CUET | BOARDS</div>
+            <div class="my-2">Police Exams</div>
+            <div>UPSC Exam</div>
+            <div class="my-2">SSC Exams</div>
+            <div>Railway Exams</div>
+        </div>
+        <div class="col-2">
+            <div><b>Popular Test Series</b></div>
+            <div class="my-2">Defence Exams</div>
+            <div>NEET | JEE | CUET | BOARDS</div>
+            <div class="my-2">Police Exams</div>
+            <div>UPSC Exam</div>
+            <div class="my-2">SSC Exams</div>
+            <div>Railway Exams</div>
+        </div>
+        <div class="col-2">
+            <div><b>Courses</b></div>
+            <div class="my-2">UPSC</div>
+            <div>NEET | JEE | CUET | BOARDS</div>
+            <div class="my-2">Current Affairs</div>
+            <div>CSAT</div>
+            <div class="my-2">SSC</div>
+            <div>Railways</div>
+        </div>
+    </div>
+</div>

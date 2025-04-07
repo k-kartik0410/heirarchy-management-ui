@@ -21,6 +21,10 @@ export class SignupComponent {
   private loader = inject(LoadingSpinnerService);
   private authService = inject(AuthService);
 
+  password = "";
+  adminPassowrd = "Gyan@1122";
+  isAdmin = false;
+
   constructor(private router: Router){}
 
   phoneNo:string = "";
@@ -50,11 +54,23 @@ export class SignupComponent {
 
   login(){
     this.loader.openLoader();
+    if(this.isAdmin){
+      if(this.adminPassowrd != this.password){
+        this.loader.closeLoader();
+        this.messagePopUpService.openPopUp("Login Failed","Invalid Password");
+        return;
+      }
+    }
     this.userService.loginuser(this.phoneNo).subscribe({
       next: (response) =>{
-        this.authService.login();
-        this.router.navigateByUrl("/home", {state: response});
-        this.loader.closeLoader();
+        if(!this.isAdmin && response?.hLevel === 0){
+          this.messagePopUpService.openPopUp("Login Failed","Please login as Admin.");
+        }
+        else{
+          this.authService.login();
+          this.router.navigateByUrl("/home", {state: response});
+          this.loader.closeLoader();
+        }  
       },
       error: (err) =>{
         this.messagePopUpService.openPopUp("Login Failed",err.error?.errorMessage);

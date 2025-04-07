@@ -34,7 +34,12 @@ export class HomePageComponent implements OnInit{
         styleClass: "p-person",
         type: "person",
         expanded: true,
-        data: {name: input[i].fullName, referral: input[i].referralCode, phoneNo: input[i].phoneNo},
+        data: {
+          name: input[i].fullName, 
+          referral: input[i].referralCode, 
+          phoneNo: input[i].phoneNo, 
+          level: input[i].levelAchived, 
+        },
         children: input[i].subordinates.length != 0 ? this.transformData(input[i].subordinates, [output[i]]): undefined
       }
     }
